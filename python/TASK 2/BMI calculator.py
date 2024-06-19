@@ -13,9 +13,7 @@ def get_user_input(prompt):
             print("Invalid input. Please enter a number.")
 
 # This function calculates BMI using the formula: BMI = weight / (height_in_meters^2)
-def calculate_bmi(weight, height_cm):
-    # Convert height from centimeters to meters.
-    height_m = height_cm / 100
+def calculate_bmi(weight, height_m):
     return weight / (height_m ** 2)
 
 # This function classifies the BMI into categories based on standard ranges.
@@ -35,10 +33,10 @@ def main():
 
     # Get the user's weight and height with proper input validation.
     weight = get_user_input("Please enter your weight in kilograms: ")
-    height_cm = get_user_input("Please enter your height in centimeters: ")
+    height_m = get_user_input("Please enter your height in meters: ")
 
     # Calculate the BMI.
-    bmi = calculate_bmi(weight, height_cm)
+    bmi = calculate_bmi(weight, height_m)
     
     # Classify the BMI into a category.
     category = classify_bmi(bmi)
